@@ -1,6 +1,6 @@
-import environ as environ
+import environ
 
-from tutorialdjango.settings.base import *  # pratica ruim usar o *
+from tutorialdjango.settings.base import *
 
 env = environ.Env()
 
