@@ -26,7 +26,10 @@ class Post (models.Model):
     # A diferença do auto_now_add é que ele vai atualizar a data e hora
     # (automatico)
 
+    class Meta:
+        ordering = ("-created",)
     # Mudar o nome no admin do Post(object post para post)
+
     def __str__(self):
         return self.title
 
@@ -35,6 +38,3 @@ class Post (models.Model):
     def get_absolute_url(self):
         return reverse("blog:detail", kwargs={"slug": self.slug})
     # Metodo para definir a url de um recurso(Metodo Post)
-
-    class Meta:
-        ordering = ("-created",)
